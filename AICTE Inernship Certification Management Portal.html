@@ -1,0 +1,107 @@
+<!-- saved from url=(0101)https://aictecert.eduskillsfoundation.org/pages/home/verify.php?cert=386e1ba67d70a31d79fca3891b44ae29 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+<style>.cke{visibility:hidden;}</style>
+</head>
+
+<body class="">
+<nav class="navbar navbar-light" style="background-color:#337ab7;min-height: 15px !important;margin-bottom: 0px;"></nav>
+
+<div>
+<img src="./AICTE Inernship Certification Management Portal_files/aicte1million2.png" alt="AICTE 1 Million" width="100%">
+</div>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>AICTE Inernship Certification Management Portal</title>
+
+<link rel="icon" type="image/png" href="https://eduskillsfoundation.org/wp-content/uploads/2019/10/icon.png">
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+<link rel="stylesheet" href="./AICTE Inernship Certification Management Portal_files/bootstrap.min.css">
+<link rel="stylesheet" href="./AICTE Inernship Certification Management Portal_files/all.min.css">
+<link rel="stylesheet" href="./AICTE Inernship Certification Management Portal_files/ionicons.min.css">
+<link rel="stylesheet" href="./AICTE Inernship Certification Management Portal_files/AdminLTE.min.css">
+<link rel="stylesheet" href="./AICTE Inernship Certification Management Portal_files/_all-skins.min.css">
+<link rel="stylesheet" href="./AICTE Inernship Certification Management Portal_files/jquery.dataTables.css">
+<link rel="stylesheet" href="./AICTE Inernship Certification Management Portal_files/style.min.css">
+<link rel="stylesheet" href="./AICTE Inernship Certification Management Portal_files/angular-busy.css">
+
+<script src="./AICTE Inernship Certification Management Portal_files/jquery-2.2.3.min.js.download"></script>
+<script src="./AICTE Inernship Certification Management Portal_files/bootstrap.min.js.download"></script>
+<script src="./AICTE Inernship Certification Management Portal_files/angular.js.download"></script>
+<script src="./AICTE Inernship Certification Management Portal_files/ngStorage.js.download"></script>
+<script src="./AICTE Inernship Certification Management Portal_files/papaparse.js.download"></script>
+<script src="./AICTE Inernship Certification Management Portal_files/purify.min.js.download"></script>
+
+<style>
+@media only screen and (max-width: 600px) {
+  .register-box { width:100%; margin: 3% auto; }
+}
+.register-box-body { background: #337ab7; color: #fff; }
+@media only screen and (min-width: 600px) {
+  .register-box { width:50%; margin: 3% auto; }
+}
+</style>
+
+<div class="register-box ng-scope" ng-app="myApp" ng-controller="certController">
+  <div class="register-box-body">
+
+    <div ng-show="certverified" style="color:whitesmoke">
+      <h3 class="login-box-msg">
+        <img src="./AICTE Inernship Certification Management Portal_files/checked.gif" width="30%"><br>
+        AICTE Internship Certificate is successfully verified
+      </h3>
+
+      <h4 class="ng-binding">Certificate ID: 386e1ba67d70a31d79fca3891b44ae29</h4>
+
+      <!-- UPDATED DATE -->
+      <h4 class="ng-binding">Issued On: 14 Nov 2025</h4>
+
+      <h4 class="ng-binding">Issued To: Aman Kumar</h4>
+      <h4 class="ng-binding">Institute: Sreenidhi Institute of Science &amp; Technology</h4>
+
+      <!-- UPDATED INTERNSHIP -->
+      <h4 class="ng-binding">Internship: GOOGLE CLOUD COMPUTING FOUNDATIONS VIRTUAL INTERNSHIP</h4>
+
+      <h4 class="ng-binding">Grade: P</h4>
+    </div>
+
+    <div style="border: solid 1px white">
+      <div class="row">
+        <div class="col-md-12"><p>Grade Details</p></div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <p>O- Outstanding - 90-100<br>E- Excellent : 80-89<br>A- Very Good : 70-79<br>B- Good : 60-69<br></p>
+        </div>
+        <div class="col-md-6">
+          <p>C- Fair : 50-59<br>D- Average : 40-49<br>P- Pass : 30-39<br>F- Fail : Below 30</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+var app = angular.module('myApp', ['datatables', 'ngResource', 'ckeditor', 'datatables.buttons', 'cgBusy']);
+app.controller('certController', function($scope, $http, $resource, DTOptionsBuilder) {
+    $scope.certid = DOMPurify.sanitize("386e1ba67d70a31d79fca3891b44ae29");
+    $scope.myPromise = $http.get('/pages/home/include/getcert.php?certid=' + $scope.certid)
+    .then(function(response) {
+        if(response.data == "null") {
+            $scope.certnotverified = true;
+            $scope.errmsg = "Sorry certificate details not found";
+        } else {
+            $scope.cert = response.data;
+            $scope.certverified = true;
+        }
+    })
+});
+</script>
+
+</body>
+</html>

@@ -54,12 +54,12 @@
         AICTE Internship Certificate is successfully verified
       </h3>
 
-      <h4 class="ng-binding">Certificate ID: 4b0ec12084b91f6039e7721da39a9531</h4>
+      <h4 class="ng-binding">Certificate ID: 386e1ba67d70a31d79fca3891b44ae29</h4>
 
       <!-- UPDATED DATE -->
       <h4 class="ng-binding">Issued On: 14 Nov 2025</h4>
 
-      <h4 class="ng-binding">Issued To: Sreeja K</h4>
+      <h4 class="ng-binding">Issued To: Aman Kumar</h4>
       <h4 class="ng-binding">Institute: Sreenidhi Institute of Science &amp; Technology</h4>
 
       <!-- UPDATED INTERNSHIP -->
@@ -89,7 +89,7 @@
 <script>
 var app = angular.module('myApp', ['datatables', 'ngResource', 'ckeditor', 'datatables.buttons', 'cgBusy']);
 app.controller('certController', function($scope, $http, $resource, DTOptionsBuilder) {
-    $scope.certid = DOMPurify.sanitize("4b0ec12084b91f6039e7721da39a9531");
+    $scope.certid = DOMPurify.sanitize("386e1ba67d70a31d79fca3891b44ae29");
     $scope.myPromise = $http.get('/pages/home/include/getcert.php?certid=' + $scope.certid)
     .then(function(response) {
         if(response.data == "null") {
